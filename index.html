@@ -1,70 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Gilbert Boadu Ampomah is a protein chemist and chemical biologist studying post-translational modifications, protein function, and disease.">
-  <title>Gilbert Boadu Ampomah | Protein Chemist</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gilbert Boadu Ampomah | Home</title>
+  <meta name="description" content="Academic website of Gilbert Boadu Ampomah.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Gilbert Ampomah home"><span class="brand-mark">GA</span><span>Gilbert Ampomah</span></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Menu</span></button>
-    <nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a class="active" href="#home">home</a><a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#teaching">Teaching</a><a href="#contact">Contact</a><a class="nav-cta" href="assets/Gilbert_Ampomah_CV.pdf">CV</a> </nav>
 
-      <a class="active" href="index.html">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="teaching.html">Teaching</a><a class="nav-cta" href="cv.html">CV</a>
+  <button class="menu-toggle" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+
+  <aside class="sidebar">
+    <img class="portrait" src="assets/img/profile.jpg" alt="Portrait of Gilbert Boadu Ampomah">
+    <h1><a href="index.html">Gilbert Boadu Ampomah</a></h1>
+
+    <div class="social">
+      <a href="https://github.com/gampomah59" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://scholar.google.com/citations?user=2ACxZ1EAAAAJ&hl=en&oi=ao" aria-label="Google Scholar"><i class="bi bi-mortarboard"></i></a>
+      <a href="https://www.linkedin.com/in/gilbert-boadu-ampomah-b27706195/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:gilbertboadu@outlook.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+    </div>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html" class="active"><i class="bi bi-house"></i> Home</a></li>
+        <li><a href="about.html"><i class="bi bi-person"></i> About</a></li>
+        <li><a href="research.html"><i class="bi bi-lightbulb"></i> Research</a></li>
+        <li><a href="publications.html"><i class="bi bi-journal-text"></i> Publications</a></li>
+        <li><a href="teaching.html"><i class="bi bi-easel"></i> Teaching</a></li>
+        <li><a href="cv.html"><i class="bi bi-file-earmark-person"></i> CV</a></li>
+      </ul>
     </nav>
-  </header>
+  </aside>
 
-  <main>
-    <section class="hero wrap" id="Home">
-      <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> Protein chemistry · Chemical biology</p>
-        <h1>Understanding how <em>chemical modifications</em> shape protein function.</h1>
-        <p class="lede">I’m Gilbert Boadu Ampomah, a Ph.D. candidate at the University of Southern California. I develop chemical and biochemical approaches to study post-translational modifications, protein aggregation, and disease-relevant protein function.</p>
-        <div class="button-row"><a class="button primary" href="research.html">Explore my research <span>→</span></a><a class="button secondary" href="publications.html">View publications</a></div>
-        <div class="mini-links"><a href="https://scholar.google.com/citations?user=2ACxZ1EAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">Google scholar</a><a <a href="https://github.com/gampomah59/gampomah.github.io" target="_blank" rel="nonreferrer">Github </a><a href="mailto:gilbertboadu@outlook.com">Email</a><a href="https://www.linkedin.com/in/gilbert-boadu-ampomah-b27706195/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="cv.html">Curriculum vitae</a></div>
-      </div>
-      <div class="hero-visual reveal delay-1" aria-label="Abstract protein chemistry illustration">
-        <div class=<div class="portrait-placeholder"><img src="assets/gilbert-headshot.jpeg" alt="Portrait of Gilbert Boadu Ampomah"></div>
+  <main class="main">
+    <section class="hero">
+      <h2>Hi, I'm Gilbert Boadu Ampomah</h2>
+      <p class="tagline">[a chemical biologist], [at the university of Southern California] · [with interest in developing biochemical and chemical tools to study post-translational modifications]</p>
+      <div>
+        <a href="research.html" class="btn">See my research</a>
+        <a href="cv.html" class="btn outline">View my CV</a>
       </div>
     </section>
 
-    <section class="dark-band">
-      <div class="wrap metrics">
-        <div><strong>Protein semisynthesis</strong><span>Precisely defined proteoforms</span></div>
-        <div><strong>PTM crosstalk</strong><span>O-GlcNAcylation and phosphorylation</span></div>
-        <div><strong>Disease biology</strong><span>Aggregation and cellular labeling</span></div>
-      </div>
-    </section>
-
-    <section class="section wrap">
-      <div class="section-heading reveal"><p class="eyebrow"><span></span> Research focus</p><h2>Chemistry as a lens into complex biology</h2><p>My work connects molecular precision with biological questions—building defined proteins and chemical tools, then using them to uncover mechanisms that conventional approaches can miss.</p></div>
-      <div class="research-grid">
-        <a class="research-card plum reveal" href="research.html#synuclein"><span class="card-number">01</span><div class="molecule-icon">α</div><h3>Protein aggregation & longevity</h3><p>Comparing α-synuclein sequences across vertebrates to understand how evolutionary lifespan relates to aggregation propensity.</p><span class="text-link">Explore project →</span></a>
-        <a class="research-card teal reveal delay-1" href="research.html#hsp27"><span class="card-number">02</span><div class="molecule-icon">PTM</div><h3>HSP27 modification crosstalk</h3><p>Using protein semisynthesis to resolve how O-GlcNAcylation and phosphorylation jointly regulate chaperone structure and function.</p><span class="text-link">Explore project →</span></a>
-        <a class="research-card gold reveal delay-2" href="research.html#reporters"><span class="card-number">03</span><div class="molecule-icon">N₃</div><h3>Chemical reporters in cells</h3><p>Developing probes and engineered assays that distinguish enzymatic labeling from chemical artifacts in cellular glycosylation studies.</p><span class="text-link">Explore project →</span></a>
-      </div>
-    </section>
-
-    <section class="section soft-section">
-      <div class="wrap split-feature">
-        <div class="journey-map reveal"><div class="map-line"></div><div class="map-stop ghana"><span></span><b>Kumasi, Ghana</b><small>Natural products · Analytical chemistry</small></div><div class="map-stop la"><span></span><b>Los Angeles, USA</b><small>Protein chemistry · Chemical biology</small></div></div>
-        <div class="reveal delay-1"><p class="eyebrow"><span></span> Academic journey</p><h2>From natural products to precision protein chemistry</h2><p>My scientific path began at KNUST, where I studied bioactive natural products, antimicrobial molecules, and analytical chemistry. At USC, I shifted toward the molecular control of proteins—combining synthesis, biochemistry, and cell-based approaches to study post-translational modifications.</p><a class="text-link strong" href="about.html">Read my story →</a></div>
-      </div>
-    </section>
-
-    <section class="section wrap">
-      <div class="feature-publication reveal"><div><p class="eyebrow light"><span></span> Selected publication · 2025</p><h2>Long-lived animals reveal clues about α-synuclein aggregation</h2><p>Our comparative study found that α-synuclein sequences from long-lived animals generally aggregate less readily than sequences from shorter-lived animals, including humans.</p><p class="citation">Ampomah, G.B., Hard, E.R. & Pratt, M.R. <i>ChemBioChem</i> 26, e202500340.</p><a class="button light-button" href="publications.html">See all publications →</a></div><div class="protein-ribbon" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div></div>
-    </section>
-
-    <section class="section contact-section"><div class="wrap contact-inner reveal"><div><p class="eyebrow light"><span></span> Connect</p><h2>Interested in protein chemistry, PTMs, or collaborative science?</h2></div><a class="button white" href="mailto:gilbertboadu@outlook.com">Start a conversation <span>↗</span></a></div></section>
+    <footer class="footer">© 2026 Gilbert Boadu Ampomah</footer>
   </main>
-  <footer class="site-footer"><div class="wrap"><div><a class="brand footer-brand" href="index.html"><span class="brand-mark">GA</span><span>Gilbert Boadu Ampomah</span></a><p>Protein chemistry · Chemical biology · Los Angeles, California</p></div><div class="footer-links"><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="cv.html">CV</a><a href="mailto:gilbertboadu@outlook.com">Email</a></div><p class="copyright">© <span data-year></span> Gilbert Boadu Ampomah</p></div></footer>
-  <script src="assets/script.js"></script>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
