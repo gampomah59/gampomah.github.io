@@ -22,3 +22,32 @@ filterButtons.forEach(btn => {
     });
   });
 });
+// Rotating hero text (home page only)
+const rotator = document.getElementById('rotator');
+if (rotator) {
+  const words = ['protein chemist', 'chemical biologist', 'Ph.D. candidate'];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  const tick = () => {
+    const word = words[wordIndex];
+    rotator.textContent = word.slice(0, charIndex);
+
+    if (!deleting && charIndex < word.length) {
+      charIndex++;
+      setTimeout(tick, 90);
+    } else if (!deleting) {
+      deleting = true;
+      setTimeout(tick, 1500);
+    } else if (charIndex > 0) {
+      charIndex--;
+      setTimeout(tick, 45);
+    } else {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(tick, 300);
+    }
+  };
+  tick();
+}
