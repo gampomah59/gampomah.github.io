@@ -222,3 +222,36 @@ a:hover { text-decoration: underline; }
 .cv-meta { list-style: none; font-size: 15px; }
 .cv-meta li { margin-bottom: 4px; }
 .cv-meta i { color: var(--accent); margin-right: 8px; }
+/* ---------- About ---------- */
+.callout {
+  border-left: 4px solid var(--accent);
+  background: rgba(20, 157, 221, 0.08);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 24px 0;
+  font-size: 17px;
+}
+.callout p { margin: 0; }
+
+.timeline {
+  position: relative;
+  margin-top: 8px;
+  padding-left: 28px;
+  border-left: 2px solid #e5e7eb;
+}
+.timeline-item { position: relative; margin-bottom: 28px; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.timeline-date { font-size: 14px; font-weight: 600; color: var(--accent); }
+.timeline-item h4 { font-size: 17px; margin: 2px 0 4px; }
+.timeline-item p { font-size: 15px; color: var(--muted); margin: 0; }
