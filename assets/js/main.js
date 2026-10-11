@@ -110,3 +110,29 @@ if (newsTrack) {
   window.addEventListener('resize', buildDots);
   buildDots();
 }
+// Number counters (About page only)
+document.querySelectorAll('.count').forEach(el => {
+  const target = parseInt(el.dataset.count, 10);
+
+  // A counter with no number yet stays hidden
+  if (!target) {
+    el.closest('.counter').style.display = 'none';
+    return;
+  }
+
+  const run = () => {
+    const start = performance.now();
+    const duration = 1200;
+    const step = now => {
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+  };
+
+  new IntersectionObserver((entries, observer) => {
+    if (entries[0].isIntersecting) { run(); observer.disconnect(); }
+  }).observe(el);
+});
