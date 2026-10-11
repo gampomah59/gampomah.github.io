@@ -51,3 +51,62 @@ if (rotator) {
   };
   tick();
 }
+// News slider (home page only)
+const newsTrack = document.querySelector('.news-track');
+if (newsTrack) {
+  const cards = newsTrack.querySelectorAll('.news-card');
+  const dotsBox = document.querySelector('.news-dots');
+  let page = 0;
+  let timer = null;
+
+  const perView = () => Math.max(1, Math.round(newsTrack.clientWidth / cards[0].offsetWidth));
+  const pageCount = () => Math.ceil(cards.length / perView());
+
+  const mark = () => {
+    dotsBox.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', i === page));
+  };
+
+  const goTo = (i) => {
+    page = (i + pageCount()) % pageCount();
+    const card = cards[Math.min(page * perView(), cards.length - 1)];
+    const pad = parseInt(getComputedStyle(newsTrack).paddingLeft, 10) || 0;
+    newsTrack.scrollTo({ left: card.offsetLeft - pad, behavior: 'smooth' });
+    mark();
+  };
+
+  const buildDots = () => {
+    dotsBox.innerHTML = '';
+    for (let i = 0; i < pageCount(); i++) {
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      b.addEventListener('click', () => goTo(i));
+      dotsBox.appendChild(b);
+    }
+    page = Math.min(page, pageCount() - 1);
+    mark();
+  };
+
+  // Keep the dots in sync when someone swipes or scrolls by hand
+  let scrollTimer;
+  newsTrack.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const atEnd = newsTrack.scrollLeft + newsTrack.clientWidth >= newsTrack.scrollWidth - 2;
+      const index = Math.round(newsTrack.scrollLeft / (cards[0].offsetWidth + 24));
+      page = atEnd ? pageCount() - 1 : Math.min(Math.floor(index / perView()), pageCount() - 1);
+      mark();
+    }, 80);
+  });
+
+  // Auto-advance, paused while the pointer is over the slider
+  const start = () => { timer = setInterval(() => goTo(page + 1), 5000); };
+  const stop = () => clearInterval(timer);
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    start();
+    newsTrack.addEventListener('mouseenter', stop);
+    newsTrack.addEventListener('mouseleave', () => { stop(); start(); });
+  }
+
+  window.addEventListener('resize', buildDots);
+  buildDots();
+}
