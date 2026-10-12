@@ -25,7 +25,7 @@ filterButtons.forEach(btn => {
 // Rotating hero text (home page only)
 const rotator = document.getElementById('rotator');
 if (rotator) {
-  const words = ['protein chemist', 'chemical biologist',];
+  const words = ['protein chemist', 'chemical biologist'];
   let wordIndex = 0;
   let charIndex = 0;
   let deleting = false;
