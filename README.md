@@ -18,7 +18,6 @@ Then visit `http://localhost:8000`.
 - `about.html` — Academic journey and awards
 - `research.html` — Research projects
 - `publications.html` — Filterable publication list
-- `cv.html` — Web CV and PDF download
 
 ## Before publishing
 
